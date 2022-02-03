@@ -1,6 +1,7 @@
-require('libraries/cargo').init('assets',true)
+asset = require('libraries/cargo').init('test_map',true)
+require('libraries/mapcell')
 
-local test_map = MapCell.new(assets.test_map)
+local test_map = MapCell.new(asset)
 
 function love.load()
   love.graphics.setBackgroundColor({0,0,0})
