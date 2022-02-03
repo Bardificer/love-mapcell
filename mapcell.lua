@@ -71,7 +71,7 @@ function MapCell:initCell( layer)
     grid = {}
     x = 0
     y = 0
-    for x=1, self.map_width, 1
+    for x=0, self.map_width, 1
     do
         grid[x] = {}
         for y=0, self.map_height, 1
@@ -79,7 +79,6 @@ function MapCell:initCell( layer)
             grid[x][y]= nil
         end
     end
-
     count = 1
     for count=1, #(layer['positions']), 1
     do
@@ -104,12 +103,12 @@ end
 -- @param x location to draw at
 -- @param y location to draw at
 function MapCell:drawCell(x,y)
-    tmpx = 1
-    tmpy = 1
+    tmpx = 0
+    tmpy = 0
     chunkSize=self.tile_size
-    for tmpx=1,self.map_width,1
+    for tmpx=0,self.map_width,1
     do
-        for tmpy=1,self.map_height,1
+        for tmpy=0,self.map_height,1
         do
             if self.grid[tmpx][tmpy] ~= nil
             then
